@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KingTech Labs - Independent iOS apps built with purpose." />
+  <title>KingTech Labs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0f1117;
+      --card: #1a1f2e;
+      --border: #252d3d;
+      --accent: #0af7eb;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --dimmed: #4a5568;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(10, 247, 235, 0.08);
+      border: 1px solid rgba(10, 247, 235, 0.2);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0f1117;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.85; }
+
+    /* ── SECTION ── */
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── APP CARDS ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .app-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .app-card:hover {
+      border-color: rgba(10, 247, 235, 0.35);
+      transform: translateY(-2px);
+    }
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0af7eb22, #0af7eb11);
+      border: 1px solid rgba(10, 247, 235, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+    .app-icon img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+    .app-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .app-category {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .app-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .app-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .badge-beta {
+      background: rgba(10, 247, 235, 0.1);
+      border: 1px solid rgba(10, 247, 235, 0.25);
+      color: var(--accent);
+    }
+    .badge-live {
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.25);
+      color: #00d4aa;
+    }
+    .badge-dev {
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      color: #a855f7;
+    }
+    .app-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: opacity 0.2s;
+    }
+    .app-link:hover { opacity: 0.75; }
+
+    /* Coming soon card */
+    .app-card.coming-soon {
+      border-style: dashed;
+      opacity: 0.6;
+    }
+    .app-card.coming-soon:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      opacity: 0.8;
+      transform: none;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .about-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .about-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .about-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .contact-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 247, 235, 0.1);
+      border: 1px solid rgba(10, 247, 235, 0.25);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .contact-btn:hover { background: rgba(10, 247, 235, 0.18); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--dimmed);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--dimmed);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero { padding: 72px 20px 60px; }
+      section { padding: 60px 20px; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">KingTech <span>Labs</span></a>
+      <ul class="nav-links">
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Independent iOS Studio</div>
+    <h1>Apps built with<br /><span>purpose</span></h1>
+    <p class="hero-sub">We build focused, privacy-first iOS apps that solve real problems without the noise.</p>
+    <a href="#apps" class="hero-cta">
+      View Our Apps
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="section-label">Our Apps</div>
+    <div class="section-title">What we've built</div>
+    <p class="section-sub">Privacy-first apps available on iOS.</p>
+
+    <div class="apps-grid">
+
+      <!-- FreedomFi -->
+      <div class="app-card">
+        <div class="app-card-header">
+          <div class="app-icon">💰</div>
+          <div>
+            <div class="app-name">FreedomFi</div>
+            <div class="app-category">Personal Finance</div>
+          </div>
+        </div>
+        <p class="app-desc">Take control of your finances with budgeting, expense tracking, debt payoff, savings goals, and net worth. All stored privately on your device. No accounts. No data collection.</p>
+        <div class="app-footer">
+          <span class="badge badge-beta">Beta</span>
+          <a href="https://testflight.apple.com/join/3tcNfPKx" target="_blank" rel="noopener" class="app-link">
+            Join TestFlight
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coming Soon placeholder -->
+      <div class="app-card coming-soon">
+        <div class="app-card-header">
+          <div class="app-icon">🔭</div>
+          <div>
+            <div class="app-name">Coming Soon</div>
+            <div class="app-category">In Development</div>
+          </div>
+        </div>
+        <p class="app-desc">Something new is in the works. Stay tuned for our next app.</p>
+        <div class="app-footer">
+          <span class="badge badge-dev">In Development</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About</div>
+    <div class="section-title">Who we are</div>
+    <p class="section-sub">KingTech Labs is an independent iOS studio focused on building simple, well-crafted apps.</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">🔒</div>
+        <div class="about-title">Privacy First</div>
+        <p class="about-desc">Your data stays on your device. We don't collect, sell, or transmit your personal information to anyone.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">🎯</div>
+        <div class="about-title">Focused</div>
+        <p class="about-desc">We build apps that do one thing well. No bloat, no unnecessary features. Just tools that work.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">⚡</div>
+        <div class="about-title">Indie</div>
+        <p class="about-desc">Small studio, direct feedback loop. We listen to users and ship improvements fast.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Get in touch</div>
+    <p class="section-sub">Questions, feedback, or just want to say hi?</p>
+
+    <div class="contact-card">
+      <div>
+        <div class="contact-title">support@kingtechlabs.com</div>
+        <p>We read every email and typically respond within 24 hours.</p>
+      </div>
+      <a href="mailto:support@kingtechlabs.com" class="contact-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send Email
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 KingTech Labs. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://kingtech-labs.github.io/freedomfi-privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="mailto:support@kingtechlabs.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
