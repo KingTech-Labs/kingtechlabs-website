@@ -5,20 +5,23 @@
 **Date:** 2026-03-21
 
 **What we worked on:**
-Copywriting review and wording change in the Education section of index.html.
+- Education section copywriting review
+- Created the /wrap skill and set it up for this website project
 
 **What was completed:**
-- Changed the Education section headline from "We don't just track. We teach." to "We don't just build tools. We teach."
-- Reason: "track" had privacy-adjacent connotations that could be misread in the context of a finance app
-- New wording is broader, reflects the studio's overall philosophy, and has no privacy baggage
+- Changed Education headline from "We don't just track. We teach." to "We don't just build tools. We teach.":removed "track" due to privacy connotation concerns
+- Added CLAUDE.md to the repo (was previously untracked)
+- Created and configured the /wrap skill at ~/.claude/commands/wrap.md, removing the OTA update reference so it's website-specific
+- Noted: pre-commit hook on this repo rejects em dashes:use regular hyphens in all committed files
 
 **Pending / next up:**
-- Nothing outstanding from this session
+- Nothing outstanding
 
 **Decisions made:**
-- Avoid the word "track" anywhere on the site given the privacy-first brand positioning of FreedomFi
+- Avoid the word "track" on the site given FreedomFi's privacy-first positioning
+- /wrap skill is now the standard session close for this project
 
-**Last commit:** 8c9b687
+**Last commit:** 43cae85
 
 ---
 
