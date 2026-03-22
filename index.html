@@ -445,17 +445,21 @@
       </div>
 
       <!-- Coming Soon placeholder -->
-      <div class="app-card coming-soon">
+      <div class="app-card coming-soon" style="--app-accent: #eab64d; --app-accent-dim: rgba(234,182,77,0.1); --app-accent-border: rgba(234,182,77,0.25);">
         <div class="app-card-header">
-          <div class="app-icon">🔭</div>
+          <div class="app-icon" style="background: var(--app-accent-dim); border-color: var(--app-accent-border);">🔭</div>
           <div>
             <div class="app-name">Coming Soon</div>
             <div class="app-category">In Development</div>
           </div>
         </div>
         <p class="app-desc">Something new is in the works. Stay tuned for our next app.</p>
-        <div class="app-footer">
+        <div class="app-footer" style="justify-content: center; flex-direction: column; align-items: center; gap: 10px;">
           <span class="badge badge-dev">In Development</span>
+        </div>
+        <div style="margin-top: 12px; display: flex; gap: 16px; justify-content: center;">
+          <a href="#" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'">Privacy Policy</a>
+          <a href="#" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'">Terms of Service</a>
         </div>
       </div>
 
