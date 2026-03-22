@@ -2,26 +2,32 @@
 
 ## Last Session
 
-**Date:** 2026-03-21
+**Date:** 2026-03-22
 
 **What we worked on:**
-- Education section copywriting review
-- Created the /wrap skill and set it up for this website project
+- Added a Terms of Service page for FreedomFi
+- FreedomFi app card UI polish on the homepage
+- Coming Soon card layout update
+- Project-level /wrap skill setup
 
 **What was completed:**
-- Changed Education headline from "We don't just track. We teach." to "We don't just build tools. We teach.":removed "track" due to privacy connotation concerns
-- Added CLAUDE.md to the repo (was previously untracked)
-- Created and configured the /wrap skill at ~/.claude/commands/wrap.md, removing the OTA update reference so it's website-specific
-- Noted: pre-commit hook on this repo rejects em dashes:use regular hyphens in all committed files
+- Created `terms/freedomfi.html`: full ToS page matching the privacy policy design (dark theme, cyan highlight borders changed to full border)
+- Updated highlight/warning box borders on both `privacy/freedomfi.html` and `terms/freedomfi.html` to full border instead of left-side only
+- Moved Privacy Policy and Terms of Service links into the FreedomFi app card (removed from footer), centered
+- Moved Beta pill above Join TestFlight link, both centered in the card footer
+- Updated Coming Soon card to match FreedomFi card structure (same layout, gold accent, lightbulb icon, placeholder legal links)
+- Created `.claude/commands/wrap.md`: project-level /wrap skill (2 steps only, website-specific)
 
 **Pending / next up:**
 - Nothing outstanding
 
 **Decisions made:**
-- Avoid the word "track" on the site given FreedomFi's privacy-first positioning
-- /wrap skill is now the standard session close for this project
+- KingTech Labs is a Massachusetts LLC (not Texas); governs ToS
+- "tracking" is acceptable in legal/ToS context; avoid it only in marketing copy
+- Legal links (Privacy Policy, Terms of Service) live in the app card, not the site footer
+- /wrap project skill takes precedence over global wrap for this repo (takes effect next session)
 
-**Last commit:** 43cae85
+**Last commit:** 3f69c69
 
 ---
 
@@ -51,6 +57,7 @@ Everything lives in `index.html`:
 **Supporting files:**
 - `assets/` -logo, app icons, favicons
 - `privacy/freedomfi.html` -standalone privacy policy page for FreedomFi
+- `terms/freedomfi.html` -standalone terms of service page for FreedomFi
 
 ## Design System
 
