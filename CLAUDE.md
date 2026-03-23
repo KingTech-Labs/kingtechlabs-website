@@ -5,29 +5,21 @@
 **Date:** 2026-03-22
 
 **What we worked on:**
-- Added a Terms of Service page for FreedomFi
-- FreedomFi app card UI polish on the homepage
-- Coming Soon card layout update
-- Project-level /wrap skill setup
+- Hero section UI polish: American flag under the Veteran-Owned badge
 
 **What was completed:**
-- Created `terms/freedomfi.html`: full ToS page matching the privacy policy design (dark theme, cyan highlight borders changed to full border)
-- Updated highlight/warning box borders on both `privacy/freedomfi.html` and `terms/freedomfi.html` to full border instead of left-side only
-- Moved Privacy Policy and Terms of Service links into the FreedomFi app card (removed from footer), centered
-- Moved Beta pill above Join TestFlight link, both centered in the card footer
-- Updated Coming Soon card to match FreedomFi card structure (same layout, gold accent, lightbulb icon, placeholder legal links)
-- Created `.claude/commands/wrap.md`: project-level /wrap skill (2 steps only, website-specific)
+- Added 🇺🇸 emoji below the "Veteran-Owned iOS Studio" pill badge in the hero section (`index.html`)
+- Added `.hero-flag` CSS class (font-size: 28px, centered, tight margin between badge and headline)
+- Adjusted `.hero-eyebrow` bottom margin from 24px → 8px to tighten spacing with the flag
 
 **Pending / next up:**
 - Nothing outstanding
 
 **Decisions made:**
-- KingTech Labs is a Massachusetts LLC (not Texas); governs ToS
-- "tracking" is acceptable in legal/ToS context; avoid it only in marketing copy
-- Legal links (Privacy Policy, Terms of Service) live in the app card, not the site footer
-- /wrap project skill takes precedence over global wrap for this repo (takes effect next session)
+- Flag is rendered as emoji (not an SVG/image asset) for simplicity
+- Flag sits between the badge and the h1 headline
 
-**Last commit:** 3f69c69
+**Last commit:** ec9b317
 
 ---
 
