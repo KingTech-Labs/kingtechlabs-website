@@ -5,12 +5,13 @@
 **Date:** 2026-03-22
 
 **What we worked on:**
-- Hero section UI polish: Veteran-Owned badge and American flag
+- Hero section UI polish: Veteran-Owned text, American flag, and logo spacing
 
 **What was completed:**
-- Added 🇺🇸 emoji below the "Veteran-Owned iOS Studio" text in the hero (`index.html`)
-- Removed pill styling from `.hero-eyebrow` (no background, border, border-radius, or padding); now plain gold text only
-- `.hero-flag` CSS class added (font-size: 28px, centered, sits between eyebrow and h1)
+- Added 🇺🇸 emoji below "Veteran-Owned iOS Studio" text in the hero (`index.html`)
+- Removed pill styling from `.hero-eyebrow`; now plain gold text only (no background, border, border-radius, or padding)
+- Added `.hero-flag` CSS class (font-size: 28px, sits between eyebrow and h1)
+- Reduced `.hero-logo` bottom margin from 40px to 24px to tighten space under the lion logo
 
 **Pending / next up:**
 - Nothing outstanding
@@ -19,7 +20,7 @@
 - Flag rendered as emoji, not SVG/image asset
 - "Veteran-Owned iOS Studio" is plain gold text, no pill/badge container
 
-**Last commit:** 7cb8bc0
+**Last commit:** e300c2a
 
 ---
 
