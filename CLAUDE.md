@@ -2,25 +2,25 @@
 
 ## Last Session
 
-**Date:** 2026-03-22
+**Date:** 2026-03-28
 
 **What we worked on:**
-- Hero section UI polish: Veteran-Owned text, American flag, and logo spacing
+- Added Legends of Ashwynd app card to the apps section
 
 **What was completed:**
-- Added 🇺🇸 emoji below "Veteran-Owned iOS Studio" text in the hero (`index.html`)
-- Removed pill styling from `.hero-eyebrow`; now plain gold text only (no background, border, border-radius, or padding)
-- Added `.hero-flag` CSS class (font-size: 28px, sits between eyebrow and h1)
-- Reduced `.hero-logo` bottom margin from 40px to 24px to tighten space under the lion logo
+- Replaced the Coming Soon placeholder card with a real Legends of Ashwynd card
+- Added icon (`assets/legends-of-ashwynd-icon.png`) from user-provided image
+- Card uses crimson accent color (`#c0392b`) to match the dark fantasy icon palette
+- Full description text, Dark Fantasy RPG category, In Development badge, placeholder Privacy/Terms links
 
 **Pending / next up:**
-- Nothing outstanding
+- Replace placeholder Privacy/Terms links when those pages exist
 
 **Decisions made:**
-- Flag rendered as emoji, not SVG/image asset
-- "Veteran-Owned iOS Studio" is plain gold text, no pill/badge container
+- Card is not styled as `coming-soon` (no faded/dashed treatment) since it's a named real project
+- Kept placeholder Privacy/Terms links per user request
 
-**Last commit:** e300c2a
+**Last commit:** e7a90e4
 
 ---
 
