@@ -1,17 +1,17 @@
 # CLAUDE.md
 
-## Last Session (2026-04-04 ashwynd-legal-pages)
+## Last Session (2026-04-04 ashwynd-beta-status)
 
-**Working on:** Adding privacy policy and terms of service for Legends of Ashwynd
+**Working on:** Updating Legends of Ashwynd status from "In Development" to Beta
 
 **Completed:**
-- Added `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html`
-- Updated placeholder `#` links in the Ashwynd app card to point to the new pages
+- Changed Ashwynd card badge from `badge-dev` / "In Development" to `badge-beta` / "Beta"
+- Added "TestFlight coming soon" note below the badge
 
 **Pending:**
-- No outstanding items
+- Update TestFlight link once app review is approved
 
-**Last commit:** `b3febb4` Add privacy policy and terms of service for Legends of Ashwynd
+**Last commit:** `6479d8f` Update Legends of Ashwynd status to Beta with TestFlight coming soon
 
 ---
 
