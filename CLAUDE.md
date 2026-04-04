@@ -2,25 +2,18 @@
 
 ## Last Session
 
-**Date:** 2026-03-28
+**Date:** 2026-04-03
 
 **What we worked on:**
-- Added Legends of Ashwynd app card to the apps section
+- Minor copy fix on Legends of Ashwynd app description
 
 **What was completed:**
-- Replaced the Coming Soon placeholder card with a real Legends of Ashwynd card
-- Added icon (`assets/legends-of-ashwynd-icon.png`) from user-provided image
-- Card uses crimson accent color (`#c0392b`) to match the dark fantasy icon palette
-- Full description text, Dark Fantasy RPG category, In Development badge, placeholder Privacy/Terms links
+- Changed "how you got there" to "how you get there" in Ashwynd description (present tense)
 
 **Pending / next up:**
-- Replace placeholder Privacy/Terms links when those pages exist
+- Replace placeholder Privacy/Terms links for Legends of Ashwynd when those pages exist
 
-**Decisions made:**
-- Card is not styled as `coming-soon` (no faded/dashed treatment) since it's a named real project
-- Kept placeholder Privacy/Terms links per user request
-
-**Last commit:** e7a90e4
+**Last commit:** `d9e2d9d` Fix tense in Legends of Ashwynd description: "got" to "get"
 
 ---
 
