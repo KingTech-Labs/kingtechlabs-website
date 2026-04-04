@@ -1,19 +1,17 @@
 # CLAUDE.md
 
-## Last Session
+## Last Session (2026-04-04 ashwynd-legal-pages)
 
-**Date:** 2026-04-03
+**Working on:** Adding privacy policy and terms of service for Legends of Ashwynd
 
-**What we worked on:**
-- Minor copy fix on Legends of Ashwynd app description
+**Completed:**
+- Added `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html`
+- Updated placeholder `#` links in the Ashwynd app card to point to the new pages
 
-**What was completed:**
-- Changed "how you got there" to "how you get there" in Ashwynd description (present tense)
+**Pending:**
+- No outstanding items
 
-**Pending / next up:**
-- Replace placeholder Privacy/Terms links for Legends of Ashwynd when those pages exist
-
-**Last commit:** `d9e2d9d` Fix tense in Legends of Ashwynd description: "got" to "get"
+**Last commit:** `b3febb4` Add privacy policy and terms of service for Legends of Ashwynd
 
 ---
 
@@ -43,7 +41,9 @@ Everything lives in `index.html`:
 **Supporting files:**
 - `assets/` -logo, app icons, favicons
 - `privacy/freedomfi.html` -standalone privacy policy page for FreedomFi
+- `privacy/legendsofashwynd.html` -standalone privacy policy page for Legends of Ashwynd
 - `terms/freedomfi.html` -standalone terms of service page for FreedomFi
+- `terms/legendsofashwynd.html` -standalone terms of service page for Legends of Ashwynd
 
 ## Design System
 
