@@ -1,17 +1,18 @@
 # CLAUDE.md
 
-## Last Session (2026-04-04 ashwynd-beta-status)
+## Last Session (2026-04-04 ashwynd-beta-styling)
 
-**Working on:** Updating Legends of Ashwynd status from "In Development" to Beta
+**Working on:** Updating Legends of Ashwynd card to reflect beta status with matching styling
 
 **Completed:**
 - Changed Ashwynd card badge from `badge-dev` / "In Development" to `badge-beta` / "Beta"
 - Added "TestFlight coming soon" note below the badge
+- Changed card accent color from red (`#c0392b`) to gold (`#eab64d`) to match the beta badge and brand color
 
 **Pending:**
 - Update TestFlight link once app review is approved
 
-**Last commit:** `6479d8f` Update Legends of Ashwynd status to Beta with TestFlight coming soon
+**Last commit:** `7e12441` Change Legends of Ashwynd card accent from red to gold to match beta badge
 
 ---
 
