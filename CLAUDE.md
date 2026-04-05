@@ -2,13 +2,13 @@
 
 ## Last Session (2026-04-05 ashwynd-testflight-link)
 
-**Working on:** Adding the TestFlight beta link for Legends of Ashwynd
+**Working on:** Adding and styling the TestFlight beta link for Legends of Ashwynd
 
 **Completed:**
-- Replaced "TestFlight coming soon" placeholder with a live "Join the TestFlight Beta" link
-- Link styled in gold (`#eab64d`) to match the card accent, opens in new tab
+- Replaced "TestFlight coming soon" placeholder with a live TestFlight link (`https://testflight.apple.com/join/shnpM3R9`)
+- Restyled Ashwynd card footer to match FreedomFi: accent-colored badge with `var(--app-accent)`, `app-link` class, and external link SVG icon
 
-**Last commit:** `03bca55` Add TestFlight link for Legends of Ashwynd beta
+**Last commit:** `725f6d9` Match Ashwynd TestFlight link style to FreedomFi card
 
 ---
 
