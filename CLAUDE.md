@@ -1,14 +1,22 @@
 # CLAUDE.md
 
-## Last Session (2026-04-05 ashwynd-testflight-link)
+## Last Session (2026-04-11 ashwynd-landing-page)
 
-**Working on:** Adding and styling the TestFlight beta link for Legends of Ashwynd
+**Working on:** Creating a dedicated landing page for Legends of Ashwynd at `/games/ashwynd`
 
 **Completed:**
-- Replaced "TestFlight coming soon" placeholder with a live TestFlight link (`https://testflight.apple.com/join/shnpM3R9`)
-- Restyled Ashwynd card footer to match FreedomFi: accent-colored badge with `var(--app-accent)`, `app-link` class, and external link SVG icon
+- Built full landing page with splash hero (Malachar art), gameplay features (2x2 grid), factions section, heroes roster, regions gallery, story section, and TestFlight CTAs
+- Added all game assets: splash art, 7 hero portraits, 5 faction crests, 5 region landscapes
+- Added "Eryndor Expansion" teasers in both heroes (3 mystery cards) and regions (5 mystery cards) sections
+- Made Ashwynd card on main site clickable, linking to the landing page
+- Restructured to `games/ashwynd/index.html` for clean URL routing on Cloudflare Pages
 
-**Last commit:** `725f6d9` Match Ashwynd TestFlight link style to FreedomFi card
+**Key decisions:**
+- Used `object-fit: contain` for splash hero so full Malachar art is visible rather than cropped
+- Used `onclick` handler on card div instead of wrapping `<a>` tag to avoid invalid nested anchor elements
+- Kept Eryndor Expansion hero/region names as mysteries to build curiosity for future reveals
+
+**Last commit:** `dbdcc04` Make Ashwynd card clickable, linking to its landing page
 
 ---
 
@@ -37,6 +45,8 @@ Everything lives in `index.html`:
 
 **Supporting files:**
 - `assets/` -logo, app icons, favicons
+- `assets/ashwynd/` -splash art, hero portraits, faction crests, region landscapes
+- `games/ashwynd/index.html` -dedicated Ashwynd landing page
 - `privacy/freedomfi.html` -standalone privacy policy page for FreedomFi
 - `privacy/legendsofashwynd.html` -standalone privacy policy page for Legends of Ashwynd
 - `terms/freedomfi.html` -standalone terms of service page for FreedomFi
@@ -54,4 +64,4 @@ Glass-morphism navbar uses `backdrop-filter: blur`.
 
 ## Deployment
 
-Static hosting -push to GitHub, deploy via GitHub Pages, Netlify, Vercel, or any CDN. No build pipeline needed.
+Hosted on Cloudflare Pages, connected to GitHub repo on `master` branch. Push to deploy. No build pipeline needed.
