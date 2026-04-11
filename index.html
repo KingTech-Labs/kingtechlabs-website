@@ -484,7 +484,7 @@
       </div>
 
       <!-- Legends of Ashwynd -->
-      <div class="app-card" style="--app-accent: #eab64d; --app-accent-dim: rgba(234,182,77,0.1); --app-accent-border: rgba(234,182,77,0.3);">
+      <div class="app-card" style="--app-accent: #eab64d; --app-accent-dim: rgba(234,182,77,0.1); --app-accent-border: rgba(234,182,77,0.3); cursor: pointer;" onclick="window.location='/games/ashwynd'">
         <div class="app-card-header">
           <div class="app-icon" style="background: var(--app-accent-dim); border-color: var(--app-accent-border);"><img src="assets/legends-of-ashwynd-icon.png" alt="Legends of Ashwynd" /></div>
           <div>
@@ -495,14 +495,14 @@
         <p class="app-desc">Rule a kingdom, recruit heroes, and send them on quests through dangerous lands filled with monsters, riddles, and political intrigue. Every choice has consequences. Five factions track your reputation across the entire playthrough, and the alliances you build shape the story all the way to its end. Malachar the Undying waits in his Citadel. Whether Ashwynd survives depends on how you get there.</p>
         <div class="app-footer" style="justify-content: center; flex-direction: column; align-items: center; gap: 10px;">
           <span class="badge" style="background: var(--app-accent-dim); border: 1px solid var(--app-accent-border); color: var(--app-accent);">Beta</span>
-          <a href="https://testflight.apple.com/join/shnpM3R9" target="_blank" rel="noopener" class="app-link" style="color: var(--app-accent);">
+          <a href="https://testflight.apple.com/join/shnpM3R9" target="_blank" rel="noopener" class="app-link" style="color: var(--app-accent);" onclick="event.stopPropagation();">
             Join TestFlight
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
         <div style="margin-top: 12px; display: flex; gap: 16px; justify-content: center;">
-          <a href="privacy/legendsofashwynd.html" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'">Privacy Policy</a>
-          <a href="terms/legendsofashwynd.html" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'">Terms of Service</a>
+          <a href="privacy/legendsofashwynd.html" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'" onclick="event.stopPropagation();">Privacy Policy</a>
+          <a href="terms/legendsofashwynd.html" style="font-size: 12px; color: #8892a4; text-decoration: none;" onmouseover="this.style.color='#e2e8f0'" onmouseout="this.style.color='#8892a4'" onclick="event.stopPropagation();">Terms of Service</a>
         </div>
       </div>
 
