@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Legends of Ashwynd - A dark fantasy RPG where every choice shapes the fate of a kingdom. Rule, recruit, and fight your way to the Citadel." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png" />
+  <title>Legends of Ashwynd - KingTech Labs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #000000;
+      --card: #111111;
+      --border: #222222;
+      --gold: #eab64d;
+      --gold-light: #f5ce7a;
+      --gold-dim: rgba(234, 182, 77, 0.15);
+      --gold-border: rgba(234, 182, 77, 0.25);
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --dimmed: #4a5568;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+      padding: 0 24px 60px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top center;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.95) 85%,
+        #000000 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(234, 182, 77, 0.12);
+      border: 1px solid var(--gold-border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-tagline {
+      font-size: 20px;
+      color: var(--text);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #0f1117;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.85; }
+    .hero-platform {
+      display: block;
+      font-size: 13px;
+      color: var(--dimmed);
+      margin-top: 14px;
+    }
+
+    /* ── HEROES GRID ── */
+    .heroes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .hero-card {
+      width: 180px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .hero-card:hover {
+      transform: translateY(-4px);
+    }
+    .hero-portrait {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .hero-card:hover .hero-portrait {
+      border-color: var(--gold-border);
+    }
+    .hero-class {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 12px;
+    }
+    .hero-card.mystery .hero-portrait {
+      border-style: dashed;
+      border-color: var(--dimmed);
+      background: var(--card);
+    }
+    .mystery-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: var(--dimmed);
+      background: var(--card);
+      border: 1px dashed var(--dimmed);
+      border-radius: 16px;
+    }
+    .hero-card.mystery .hero-class {
+      color: var(--dimmed);
+      font-style: italic;
+    }
+    .hero-card.mystery:hover {
+      transform: none;
+    }
+    .heroes-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    /* ── REGIONS GRID ── */
+    .regions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .region-card {
+      width: 280px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .region-card:hover {
+      transform: translateY(-4px);
+    }
+    .region-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .region-card:hover .region-img {
+      border-color: var(--gold-border);
+    }
+    .region-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 10px;
+    }
+    .regions-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+    .region-card.mystery:hover {
+      transform: none;
+    }
+    .region-card.mystery .region-name {
+      color: var(--dimmed);
+      font-style: italic;
+    }
+    .mystery-region {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: var(--dimmed);
+      background: var(--card);
+      border: 1px dashed var(--dimmed);
+      border-radius: 12px;
+    }
+    .continent-divider {
+      text-align: center;
+      padding: 32px 0 12px;
+      flex-basis: 100%;
+    }
+    /* ── FACTIONS GRID ── */
+    .factions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+    .faction-card {
+      width: 160px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .faction-card:hover {
+      transform: translateY(-4px);
+    }
+    .faction-crest {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+      filter: drop-shadow(0 0 20px rgba(234, 182, 77, 0.15));
+      transition: filter 0.2s;
+    }
+    .faction-card:hover .faction-crest {
+      filter: drop-shadow(0 0 24px rgba(234, 182, 77, 0.3));
+    }
+    .faction-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 12px;
+    }
+
+    .continent-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dimmed);
+      border: 1px dashed var(--dimmed);
+      border-radius: 100px;
+      padding: 6px 16px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 640px;
+    }
+
+    /* ── FEATURE GRID ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover {
+      border-color: var(--gold-border);
+    }
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .feature-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── STORY SECTION ── */
+    .story {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .story-quote {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .story-quote span { color: var(--gold); }
+    .story-text {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .cta-card {
+      background: var(--card);
+      border: 1px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 48px 32px;
+    }
+    .cta-card h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--dimmed);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--dimmed);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero { min-height: 80vh; padding: 0 20px 48px; }
+      section { padding: 60px 20px; }
+      .story { padding: 60px 20px; }
+      .cta-section { padding: 60px 20px; }
+      .cta-card { padding: 36px 24px; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero-card { width: 140px; }
+      .heroes-grid { gap: 14px; }
+      .region-card { width: 100%; }
+      .regions-grid { gap: 14px; }
+      .faction-card { width: 130px; }
+      .factions-grid { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span>King</span>Tech Labs</a>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#factions">Factions</a></li>
+        <li><a href="#heroes">Heroes</a></li>
+        <li><a href="#regions">Regions</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg">
+      <img src="/assets/ashwynd/splash.png" alt="Legends of Ashwynd" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">Dark Fantasy RPG</div>
+      <p class="hero-tagline">Rule a kingdom. Recruit heroes. Shape the fate of a world on the edge of ruin.</p>
+      <a href="https://testflight.apple.com/join/shnpM3R9" target="_blank" rel="noopener" class="hero-cta">
+        Join the Beta
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <span class="hero-platform">Available on iOS via TestFlight</span>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-label">Gameplay</div>
+    <div class="section-title">What makes Ashwynd different</div>
+    <p class="section-sub">Not a dungeon crawler. Not an idle clicker. Ashwynd is a story-driven RPG where your decisions have real weight.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">👑</div>
+        <div class="feature-name">Kingdom Management</div>
+        <p class="feature-desc">You are the ruler. Manage resources, issue decrees, and navigate the politics of a fractured realm. Your kingdom reflects every decision you make.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚔️</div>
+        <div class="feature-name">Heroes &amp; Quests</div>
+        <p class="feature-desc">Recruit heroes with unique abilities and send them on quests through dangerous lands filled with monsters, riddles, and political intrigue.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏴</div>
+        <div class="feature-name">Five Factions</div>
+        <p class="feature-desc">Every faction tracks your reputation across the entire playthrough. Alliances shift based on your actions. Betray one faction, and the others will remember.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔀</div>
+        <div class="feature-name">Branching Consequences</div>
+        <p class="feature-desc">No filler choices. Every decision echoes forward, shaping quests, alliances, and outcomes all the way to the final confrontation.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FACTIONS -->
+  <section id="factions">
+    <div class="section-label">Allegiances</div>
+    <div class="section-title">Five Factions</div>
+    <p class="section-sub">Every faction tracks your reputation across the entire game. Your alliances, betrayals, and decisions shape how each faction sees you.</p>
+
+    <div class="factions-grid">
+      <div class="faction-card">
+        <img src="/assets/ashwynd/factions/crown.png" alt="The Crown" class="faction-crest" />
+        <div class="faction-name">The Crown</div>
+      </div>
+      <div class="faction-card">
+        <img src="/assets/ashwynd/factions/merchants.png" alt="Merchant Guild" class="faction-crest" />
+        <div class="faction-name">Merchant Guild</div>
+      </div>
+      <div class="faction-card">
+        <img src="/assets/ashwynd/factions/faith.png" alt="The Old Faith" class="faction-crest" />
+        <div class="faction-name">The Old Faith</div>
+      </div>
+      <div class="faction-card">
+        <img src="/assets/ashwynd/factions/brotherhood.png" alt="Shadow Brotherhood" class="faction-crest" />
+        <div class="faction-name">Shadow Brotherhood</div>
+      </div>
+      <div class="faction-card">
+        <img src="/assets/ashwynd/factions/raiders.png" alt="Ashborn Raiders" class="faction-crest" />
+        <div class="faction-name">Ashborn Raiders</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HEROES -->
+  <section id="heroes">
+    <div class="section-label">Your Party</div>
+    <div class="section-title">Heroes of Ashwynd</div>
+    <p class="section-sub">Seven heroes, each with their own abilities and loyalties. Who you recruit and how you lead them will shape everything. Three more arrive in the Eryndor Expansion.</p>
+
+    <div class="heroes-grid">
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/knight.png" alt="Knight" class="hero-portrait" />
+        <div class="hero-class">Knight</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/mage.png" alt="Mage" class="hero-portrait" />
+        <div class="hero-class">Mage</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/archer.png" alt="Archer" class="hero-portrait" />
+        <div class="hero-class">Archer</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/rogue.png" alt="Rogue" class="hero-portrait" />
+        <div class="hero-class">Rogue</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/paladin.png" alt="Paladin" class="hero-portrait" />
+        <div class="hero-class">Paladin</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/inquisitor.png" alt="Inquisitor" class="hero-portrait" />
+        <div class="hero-class">Inquisitor</div>
+      </div>
+      <div class="hero-card">
+        <img src="/assets/ashwynd/heroes/necromancer.png" alt="Necromancer" class="hero-portrait" />
+        <div class="hero-class">Necromancer</div>
+      </div>
+      <div class="heroes-break"></div>
+      <div class="continent-divider">
+        <span class="continent-label">Eryndor Expansion</span>
+      </div>
+      <div class="hero-card mystery">
+        <div class="mystery-placeholder">?</div>
+        <div class="hero-class">Coming Soon</div>
+      </div>
+      <div class="hero-card mystery">
+        <div class="mystery-placeholder">?</div>
+        <div class="hero-class">Coming Soon</div>
+      </div>
+      <div class="hero-card mystery">
+        <div class="mystery-placeholder">?</div>
+        <div class="hero-class">Coming Soon</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- REGIONS -->
+  <section id="regions">
+    <div class="section-label">The World</div>
+    <div class="section-title">Regions of Ashwynd</div>
+    <p class="section-sub">Five regions, each with their own dangers, secrets, and stories. Where you go and when you go there matters. A new continent awaits in the Eryndor Expansion.</p>
+
+    <div class="regions-grid">
+      <div class="region-card">
+        <img src="/assets/ashwynd/regions/whispering_forest.png" alt="Whispering Forest" class="region-img" />
+        <div class="region-name">Whispering Forest</div>
+      </div>
+      <div class="region-card">
+        <img src="/assets/ashwynd/regions/crystal_caves.png" alt="Crystal Caves" class="region-img" />
+        <div class="region-name">Crystal Caves</div>
+      </div>
+      <div class="region-card">
+        <img src="/assets/ashwynd/regions/dragon_peaks.png" alt="Dragon Peaks" class="region-img" />
+        <div class="region-name">Dragon Peaks</div>
+      </div>
+      <div class="region-card">
+        <img src="/assets/ashwynd/regions/shadow_realm.png" alt="Shadow Realm" class="region-img" />
+        <div class="region-name">Shadow Realm</div>
+      </div>
+      <div class="region-card">
+        <img src="/assets/ashwynd/regions/shadow_citadel.png" alt="Shadow Citadel" class="region-img" />
+        <div class="region-name">Shadow Citadel</div>
+      </div>
+
+      <!-- New Continent -->
+      <div class="continent-divider">
+        <span class="continent-label">Eryndor Expansion</span>
+      </div>
+      <div class="region-card mystery">
+        <div class="mystery-region">?</div>
+        <div class="region-name">Unknown Region</div>
+      </div>
+      <div class="region-card mystery">
+        <div class="mystery-region">?</div>
+        <div class="region-name">Unknown Region</div>
+      </div>
+      <div class="region-card mystery">
+        <div class="mystery-region">?</div>
+        <div class="region-name">Unknown Region</div>
+      </div>
+      <div class="region-card mystery">
+        <div class="mystery-region">?</div>
+        <div class="region-name">Unknown Region</div>
+      </div>
+      <div class="region-card mystery">
+        <div class="mystery-region">?</div>
+        <div class="region-name">Unknown Region</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- STORY -->
+  <div class="story" id="story">
+    <div class="section-label">The Story</div>
+    <p class="story-quote">"Malachar the Undying waits in his Citadel. Whether <span>Ashwynd</span> survives depends on how you get there."</p>
+    <p class="story-text">The kingdom is fractured. Old alliances have crumbled. Dark forces gather at the borders while political rivals scheme from within. You have been thrust into power at the worst possible moment. Build your court, earn the trust of the factions, and prepare for a war that will define the realm. There is no single path to the Citadel. The story you write depends entirely on the choices you make along the way.</p>
+    <a href="https://testflight.apple.com/join/shnpM3R9" target="_blank" rel="noopener" class="hero-cta">
+      Play the Beta Now
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-section">
+    <div class="cta-card">
+      <h2>The beta is live.</h2>
+      <p>Legends of Ashwynd is in active development. Join the TestFlight beta to play early, report bugs, and help shape the game.</p>
+      <a href="https://testflight.apple.com/join/shnpM3R9" target="_blank" rel="noopener" class="hero-cta">
+        Join TestFlight
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 KingTech Labs. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy/legendsofashwynd.html">Privacy Policy</a>
+        <a href="/terms/legendsofashwynd.html">Terms of Service</a>
+        <a href="mailto:support@kingtechlabs.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
