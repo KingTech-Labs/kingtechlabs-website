@@ -12,6 +12,7 @@
 - Restructured to `games/ashwynd/index.html` for clean URL routing on Cloudflare Pages
 - Rewrote all section copy: gameplay, factions, heroes, regions, story, and hero tagline
 - Refined story section layout: left-aligned, 775px container, 600px body text width
+- Widened sections and dividers to 1100px so gameplay title fits on one line
 
 **Key decisions:**
 - Used `object-fit: contain` for splash hero so full Malachar art is visible rather than cropped
@@ -21,7 +22,7 @@
 - Hero order: Knight, Mage, Archer, Rogue, Paladin, Inquisitor, Necromancer
 - Region order: Whispering Forest, Crystal Caves, Dragon Peaks, Shadow Realm, Shadow Citadel
 
-**Last commit:** `2ddcb0c` Rewrite all section copy and refine story layout
+**Last commit:** `b48fce8` Widen sections and dividers to 1100px for title fit
 
 ---
 
