@@ -10,13 +10,16 @@
 - Added "Eryndor Expansion" teasers in both heroes (3 mystery cards) and regions (5 mystery cards) sections
 - Made Ashwynd card on main site clickable, linking to the landing page
 - Restructured to `games/ashwynd/index.html` for clean URL routing on Cloudflare Pages
+- Rewrote gameplay section copy to better convey the systems-heavy, consequence-driven design
 
 **Key decisions:**
 - Used `object-fit: contain` for splash hero so full Malachar art is visible rather than cropped
 - Used `onclick` handler on card div instead of wrapping `<a>` tag to avoid invalid nested anchor elements
 - Kept Eryndor Expansion hero/region names as mysteries to build curiosity for future reveals
+- Hero order: Knight, Mage, Archer, Rogue, Paladin, Inquisitor, Necromancer
+- Region order: Whispering Forest, Crystal Caves, Dragon Peaks, Shadow Realm, Shadow Citadel
 
-**Last commit:** `dbdcc04` Make Ashwynd card clickable, linking to its landing page
+**Last commit:** `ba93148` Rewrite Ashwynd gameplay section with updated copy
 
 ---
 
