@@ -2,24 +2,26 @@
 
 ## Last Session (2026-04-11 ashwynd-landing-page)
 
-**Working on:** Creating a dedicated landing page for Legends of Ashwynd at `/games/ashwynd`
+**Working on:** Building and polishing the dedicated Legends of Ashwynd landing page at `/games/ashwynd`
 
 **Completed:**
 - Built full landing page with splash hero (Malachar art), gameplay features (2x2 grid), factions section, heroes roster, regions gallery, story section, and TestFlight CTAs
 - Added all game assets: splash art, 7 hero portraits, 5 faction crests, 5 region landscapes
 - Added "Eryndor Expansion" teasers in both heroes (3 mystery cards) and regions (5 mystery cards) sections
-- Made Ashwynd card on main site clickable, linking to the landing page
+- Made Ashwynd card on main site clickable via onclick handler, linking to the landing page
 - Restructured to `games/ashwynd/index.html` for clean URL routing on Cloudflare Pages
-- Rewrote gameplay section copy to better convey the systems-heavy, consequence-driven design
+- Rewrote all section copy: gameplay, factions, heroes, regions, story, and hero tagline
+- Refined story section layout: left-aligned, 775px container, 600px body text width
 
 **Key decisions:**
 - Used `object-fit: contain` for splash hero so full Malachar art is visible rather than cropped
 - Used `onclick` handler on card div instead of wrapping `<a>` tag to avoid invalid nested anchor elements
 - Kept Eryndor Expansion hero/region names as mysteries to build curiosity for future reveals
+- Story section left-aligned rather than centered for better readability
 - Hero order: Knight, Mage, Archer, Rogue, Paladin, Inquisitor, Necromancer
 - Region order: Whispering Forest, Crystal Caves, Dragon Peaks, Shadow Realm, Shadow Citadel
 
-**Last commit:** `ba93148` Rewrite Ashwynd gameplay section with updated copy
+**Last commit:** `2ddcb0c` Rewrite all section copy and refine story layout
 
 ---
 
