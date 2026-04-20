@@ -1,28 +1,19 @@
 # CLAUDE.md
 
-## Last Session (2026-04-11 ashwynd-landing-page)
+## Last Session (2026-04-20 faction-art-refresh)
 
-**Working on:** Building and polishing the dedicated Legends of Ashwynd landing page at `/games/ashwynd`
+**Working on:** Swapping updated faction crest art into the Ashwynd landing page
 
 **Completed:**
-- Built full landing page with splash hero (Malachar art), gameplay features (2x2 grid), factions section, heroes roster, regions gallery, story section, and TestFlight CTAs
-- Added all game assets: splash art, 7 hero portraits, 5 faction crests, 5 region landscapes
-- Added "Eryndor Expansion" teasers in both heroes (3 mystery cards) and regions (5 mystery cards) sections
-- Made Ashwynd card on main site clickable via onclick handler, linking to the landing page
-- Restructured to `games/ashwynd/index.html` for clean URL routing on Cloudflare Pages
-- Rewrote all section copy: gameplay, factions, heroes, regions, story, and hero tagline
-- Refined story section layout: left-aligned, 775px container, 600px body text width
-- Widened sections and dividers to 1100px so gameplay title fits on one line
+- Replaced `merchants.png`, `brotherhood.png`, and `raiders.png` in `assets/ashwynd/factions/` with new art from `Legends-of-Ashwynd/assets/factions/`
 
 **Key decisions:**
-- Used `object-fit: contain` for splash hero so full Malachar art is visible rather than cropped
-- Used `onclick` handler on card div instead of wrapping `<a>` tag to avoid invalid nested anchor elements
-- Kept Eryndor Expansion hero/region names as mysteries to build curiosity for future reveals
-- Story section left-aligned rather than centered for better readability
-- Hero order: Knight, Mage, Archer, Rogue, Paladin, Inquisitor, Necromancer
-- Region order: Whispering Forest, Crystal Caves, Dragon Peaks, Shadow Realm, Shadow Citadel
+- Kept original filenames so no HTML/CSS changes were needed
 
-**Last commit:** `b48fce8` Widen sections and dividers to 1100px for title fit
+**Pending:**
+- None
+
+**Last commit:** `2957e6c` Update merchants, brotherhood, and raiders faction art
 
 ---
 
