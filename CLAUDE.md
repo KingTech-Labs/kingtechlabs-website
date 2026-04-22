@@ -1,19 +1,23 @@
 # CLAUDE.md
 
-## Last Session (2026-04-20 faction-art-refresh)
+## Last Session (2026-04-22 google-play-beta-links)
 
-**Working on:** Swapping updated faction crest art into the Ashwynd landing page
+**Working on:** Adding Google Play internal test links alongside existing TestFlight links for Legends of Ashwynd
 
 **Completed:**
-- Replaced `merchants.png`, `brotherhood.png`, and `raiders.png` in `assets/ashwynd/factions/` with new art from `Legends-of-Ashwynd/assets/factions/`
+- Added Google Play Beta link to the Ashwynd card on main `index.html`
+- Added Android Beta CTA beside all three TestFlight CTAs on `games/ashwynd/index.html` (hero, story, bottom CTA)
+- Updated hero platform caption to mention both iOS and Android availability
+- Relabeled "Join the Beta" / "Play the Beta Now" / "Join TestFlight" CTAs to explicitly say iOS/Android
 
 **Key decisions:**
-- Kept original filenames so no HTML/CSS changes were needed
+- Reused the existing `hero-cta` gold style for the Android button rather than introducing a second color, keeping visual parity between the two platforms
+- Wrapped paired CTAs in a `flex-wrap` container so they stack cleanly on narrow screens
 
 **Pending:**
-- None
+- Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
 
-**Last commit:** `2957e6c` Update merchants, brotherhood, and raiders faction art
+**Last commit:** `ff92643` Add Google Play beta links alongside TestFlight for Legends of Ashwynd
 
 ---
 
