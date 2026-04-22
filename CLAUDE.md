@@ -6,7 +6,7 @@
 
 **Completed:**
 - Added `.hero-name` CSS rule (white, 16px, bold) and restyled `.hero-class` as a smaller uppercase letter-spaced subtitle
-- Added hero names above each class on `games/ashwynd/index.html`: Sir Roland (Knight), Selene Moonveil (Mage), Finn Hawke (Archer), Zara Blackwell (Rogue), Azrael Valorian (Paladin), Brother Thorne (Inquisitor), Mortis the Hollow (Necromancer)
+- Added hero names above each class on `games/ashwynd/index.html`: Edmund Ashford (Knight), Selene Moonveil (Mage), Finn Hawke (Archer), Zara Blackwell (Rogue), Azrael Valorian (Paladin), Brother Thorne (Inquisitor), Mortis the Hollow (Necromancer)
 - Applied per-class colors to each class label via inline styles (cobalt, violet, forest, bronze, holy gold, crimson, sickly green)
 
 **Key decisions:**
@@ -16,7 +16,7 @@
 **Pending:**
 - Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
 
-**Last commit:** `86fb217` Switch Ashwynd hero names from gold to white
+**Last commit:** `e0b2522` Rename Knight hero to Edmund Ashford
 
 ---
 
