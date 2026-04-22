@@ -1,22 +1,23 @@
 # CLAUDE.md
 
-## Last Session (2026-04-22 ashwynd-hero-names)
+## Last Session (2026-04-22 remove-android-beta-links)
 
-**Working on:** Adding hero names above class labels on the Ashwynd heroes roster, with per-class colors
+**Working on:** Removing all Android / Google Play beta links from the site since the internal-test URL only works for allowlisted email addresses
 
 **Completed:**
-- Added `.hero-name` CSS rule (white, 16px, bold) and restyled `.hero-class` as a smaller uppercase letter-spaced subtitle
-- Added hero names above each class on `games/ashwynd/index.html`: Edmund Ashford (Knight), Selene Moonveil (Mage), Finn Hawke (Archer), Zara Blackwell (Rogue), Azrael Valorian (Paladin), Brother Thorne (Inquisitor), Mortis the Hollow (Necromancer)
-- Applied per-class colors to each class label via inline styles (cobalt, violet, forest, bronze, holy gold, crimson, sickly green)
+- Removed "Join Google Play Beta" button from the Legends of Ashwynd app card on home `index.html`
+- Removed "Join Android Beta" hero CTA, "Play on Android" story CTA, and "Join Android Beta" bottom CTA on `games/ashwynd/index.html`
+- Updated supporting copy: hero subtitle now reads "Available on iOS via TestFlight"; bottom CTA copy now reads "Join the iOS beta"
+- Left the FreedomFi privacy policy mention of Android biometric auth (`privacy/freedomfi.html:131`) in place since it's a generic platform reference, not a beta link
 
 **Key decisions:**
-- Used inline `style="color: #…"` on each class div rather than per-class CSS modifiers, since each hero color is a one-off and adding seven class rules for single-use colors would be noisier than the inline approach
-- Started hero name in brand gold but switched to white at king's request so the colored class label is the dominant chromatic element on each card
+- Did not delete the Google Play `internaltest` URL anywhere else because no other refs existed; verified with grep
+- Pending item from prior session about reviewing Ashwynd privacy/terms for Android coverage is now moot since Android distribution is no longer surfaced anywhere on the site
 
 **Pending:**
-- Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
+- (none)
 
-**Last commit:** `e0b2522` Rename Knight hero to Edmund Ashford
+**Last commit:** `b0b52d6` Remove Android beta links sitewide
 
 ---
 
