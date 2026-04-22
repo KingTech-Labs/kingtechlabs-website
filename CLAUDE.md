@@ -9,6 +9,7 @@
 - Added Android Beta CTA beside all three TestFlight CTAs on `games/ashwynd/index.html` (hero, story, bottom CTA)
 - Updated hero platform caption to mention both iOS and Android availability
 - Relabeled "Join the Beta" / "Play the Beta Now" / "Join TestFlight" CTAs to explicitly say iOS/Android
+- Centered the hero CTA pair (the flex wrapper was inheriting `text-align: center` but flex children needed `justify-content: center`)
 
 **Key decisions:**
 - Reused the existing `hero-cta` gold style for the Android button rather than introducing a second color, keeping visual parity between the two platforms
@@ -17,7 +18,7 @@
 **Pending:**
 - Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
 
-**Last commit:** `ff92643` Add Google Play beta links alongside TestFlight for Legends of Ashwynd
+**Last commit:** `f122319` Center hero beta CTA buttons on Ashwynd page
 
 ---
 
