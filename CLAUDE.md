@@ -1,24 +1,22 @@
 # CLAUDE.md
 
-## Last Session (2026-04-22 google-play-beta-links)
+## Last Session (2026-04-22 ashwynd-hero-names)
 
-**Working on:** Adding Google Play internal test links alongside existing TestFlight links for Legends of Ashwynd
+**Working on:** Adding hero names above class labels on the Ashwynd heroes roster, with per-class colors
 
 **Completed:**
-- Added Google Play Beta link to the Ashwynd card on main `index.html`
-- Added Android Beta CTA beside all three TestFlight CTAs on `games/ashwynd/index.html` (hero, story, bottom CTA)
-- Updated hero platform caption to mention both iOS and Android availability
-- Relabeled "Join the Beta" / "Play the Beta Now" / "Join TestFlight" CTAs to explicitly say iOS/Android
-- Centered the hero CTA pair (the flex wrapper was inheriting `text-align: center` but flex children needed `justify-content: center`)
+- Added `.hero-name` CSS rule (gold, 16px, bold) and restyled `.hero-class` as a smaller uppercase letter-spaced subtitle
+- Added hero names above each class on `games/ashwynd/index.html`: Sir Roland (Knight), Selene Moonveil (Mage), Finn Hawke (Archer), Zara Blackwell (Rogue), Azrael Valorian (Paladin), Brother Thorne (Inquisitor), Mortis the Hollow (Necromancer)
+- Applied per-class colors to each class label via inline styles (cobalt, violet, forest, bronze, holy gold, crimson, sickly green)
 
 **Key decisions:**
-- Reused the existing `hero-cta` gold style for the Android button rather than introducing a second color, keeping visual parity between the two platforms
-- Wrapped paired CTAs in a `flex-wrap` container so they stack cleanly on narrow screens
+- Used inline `style="color: #…"` on each class div rather than per-class CSS modifiers, since each hero color is a one-off and adding seven class rules for single-use colors would be noisier than the inline approach
+- Kept hero name in brand gold so the roster still reads as a cohesive KingTech visual; only the class label varies in color
 
 **Pending:**
 - Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
 
-**Last commit:** `f122319` Center hero beta CTA buttons on Ashwynd page
+**Last commit:** `1a06efa` Add hero names and class-colored labels to Ashwynd roster
 
 ---
 
