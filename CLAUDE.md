@@ -5,18 +5,18 @@
 **Working on:** Adding hero names above class labels on the Ashwynd heroes roster, with per-class colors
 
 **Completed:**
-- Added `.hero-name` CSS rule (gold, 16px, bold) and restyled `.hero-class` as a smaller uppercase letter-spaced subtitle
+- Added `.hero-name` CSS rule (white, 16px, bold) and restyled `.hero-class` as a smaller uppercase letter-spaced subtitle
 - Added hero names above each class on `games/ashwynd/index.html`: Sir Roland (Knight), Selene Moonveil (Mage), Finn Hawke (Archer), Zara Blackwell (Rogue), Azrael Valorian (Paladin), Brother Thorne (Inquisitor), Mortis the Hollow (Necromancer)
 - Applied per-class colors to each class label via inline styles (cobalt, violet, forest, bronze, holy gold, crimson, sickly green)
 
 **Key decisions:**
 - Used inline `style="color: #…"` on each class div rather than per-class CSS modifiers, since each hero color is a one-off and adding seven class rules for single-use colors would be noisier than the inline approach
-- Kept hero name in brand gold so the roster still reads as a cohesive KingTech visual; only the class label varies in color
+- Started hero name in brand gold but switched to white at king's request so the colored class label is the dominant chromatic element on each card
 
 **Pending:**
 - Review `privacy/legendsofashwynd.html` and `terms/legendsofashwynd.html` to confirm they cover Android / Google Play distribution, not just iOS / TestFlight
 
-**Last commit:** `1a06efa` Add hero names and class-colored labels to Ashwynd roster
+**Last commit:** `86fb217` Switch Ashwynd hero names from gold to white
 
 ---
 
