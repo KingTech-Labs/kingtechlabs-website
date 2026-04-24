@@ -10,6 +10,7 @@
 - Updated brand gold across `index.html` and `games/ashwynd/index.html`: `--gold` `#eab64d` → `#edc084`, `--gold-light` `#f5ce7a` → `#f5d4a0`, and every `rgba(234, 182, 77, X)` → `rgba(237, 192, 132, X)` (including an inline Ashwynd-card accent and two faction-crest drop-shadows)
 - Updated Design System note in CLAUDE.md to the new hex; grep-verified no stale old-gold references remain
 - Moved 🇺🇸 into the hero eyebrow badge at 28px (inline-styled span), removed the standalone `<div class="hero-flag">` element and its CSS rule, so the flag no longer double-renders
+- Added breathing room in the hero stack: `.hero-logo` bottom margin 24px → 40px, `.hero-eyebrow` bottom margin 12px → 24px
 
 **Key decisions:**
 - Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base sits mid-gradient and still reads on black
@@ -21,7 +22,7 @@
 **Pending:**
 - Swap favicons (`assets/favicon-32.png`, `assets/favicon-180.png`) once king supplies the favicon-specific image
 
-**Last commit:** `b2709bd` Scale in-badge flag to 28px and drop standalone hero flag
+**Last commit:** `d4a729a` Add breathing room below hero logo and veteran badge
 
 ---
 
