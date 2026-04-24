@@ -9,6 +9,7 @@
 - `index.html`: meta description `Independent iOS apps` → `Independent iOS and Android apps` (line 6); hero sub `iOS apps` → `iOS and Android apps` (line 442); About `iOS studio` → `iOS and Android studio` (line 540)
 - `terms/freedomfi.html`: third-party service outages list now includes Google Play Store and Android Keystore (line 194); compatibility clause now reads "iOS or Android" (line 196)
 - Logged the remaining pre-Android-launch FreedomFi terms sweep (lines 142, 144–146, 149, 170, 173, 183–187, 191, 228, 237) as a TODO under "Pending / Next Up" in `~/claudecode/FreedomFi/CLAUDE.md` so it surfaces in the right repo
+- `index.html`: bumped `.hero-sub` `max-width` from 600px to 740px (line 124) so the new "iOS and Android apps" tagline fits on one line on desktop instead of wrapping
 
 **Key decisions:**
 - Did NOT touch the Ashwynd page's "iOS Beta / TestFlight" references because Ashwynd's beta is genuinely iOS-only; broadening that copy would be inaccurate
@@ -19,7 +20,7 @@
 **Pending:**
 - Pre-Android-launch legal copy sweep on `terms/freedomfi.html` (full detail logged in `~/claudecode/FreedomFi/CLAUDE.md` Pending section)
 
-**Last commit:** `b6ef0db` Hyphenate Veteran-Owned and broaden positioning to iOS and Android
+**Last commit:** `4c5be35` Widen hero sub max-width to keep tagline on one line
 
 ---
 
