@@ -11,7 +11,8 @@
 - Updated Design System note in CLAUDE.md to the new hex; grep-verified no stale old-gold references remain
 - Moved 🇺🇸 into the hero eyebrow badge at 28px (inline-styled span), removed the standalone `<div class="hero-flag">` element and its CSS rule, so the flag no longer double-renders
 - Added breathing room in the hero stack: `.hero-logo` bottom margin 24px → 40px, `.hero-eyebrow` bottom margin 12px → 24px
-- Regenerated `assets/favicon-32.png` and `assets/favicon-180.png` from `~/Downloads/v (3).png` by cropping a 2200×2200 square centered on the lion and LANCZOS-downscaling; kept existing filenames so no HTML changes were needed
+- Regenerated `assets/favicon-32.png` and `assets/favicon-180.png` from `~/Downloads/v (3).png` with a 2200×2200 LANCZOS-downscaled crop; kept existing filenames so no HTML changes were needed
+- Re-centered the favicons on the crown's symmetric axis `(2825, 1619)` instead of the bbox center `(2880, 1619)` after king flagged the lion looked too far left in the first pass
 
 **Key decisions:**
 - Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base sits mid-gradient and still reads on black
@@ -19,11 +20,12 @@
 - Used an inline `font-size:28px;line-height:1` span for the badge flag rather than a new class, since the 12px badge text vs 28px flag is a one-off size mix not worth a CSS token
 - Left cyan `#0af7eb` (FreedomFi) and silver `#B8BEC8` untouched since neither belongs to the KingTech master brand
 - Privacy/terms pages needed no gold changes; they don't reference those tokens
+- For favicon optical centering, used the crown's centroid as the reference symmetric axis rather than the full-logo bbox; the right fluffy mane and left circuit drips are asymmetric so bbox centering visibly shifts the face off-center
 
 **Pending:**
 - (none)
 
-**Last commit:** `29ba022` Regenerate favicons from new crowned-lion mark
+**Last commit:** `45e25bb` Re-center favicons on the crown axis for optical balance
 
 ---
 
