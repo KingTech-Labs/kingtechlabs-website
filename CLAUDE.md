@@ -1,23 +1,21 @@
 # CLAUDE.md
 
-## Last Session (2026-04-22 remove-android-beta-links)
+## Last Session (2026-04-24 replace-company-logo)
 
-**Working on:** Removing all Android / Google Play beta links from the site since the internal-test URL only works for allowlisted email addresses
+**Working on:** Swapping the hero logo with a new crowned-lion mark provided by king
 
 **Completed:**
-- Removed "Join Google Play Beta" button from the Legends of Ashwynd app card on home `index.html`
-- Removed "Join Android Beta" hero CTA, "Play on Android" story CTA, and "Join Android Beta" bottom CTA on `games/ashwynd/index.html`
-- Updated supporting copy: hero subtitle now reads "Available on iOS via TestFlight"; bottom CTA copy now reads "Join the iOS beta"
-- Left the FreedomFi privacy policy mention of Android biometric auth (`privacy/freedomfi.html:131`) in place since it's a generic platform reference, not a beta link
+- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename kept identical so no HTML edits needed)
+- Verified only one HTML reference existed (`index.html:444`); favicons left untouched per king's instruction
 
 **Key decisions:**
-- Did not delete the Google Play `internaltest` URL anywhere else because no other refs existed; verified with grep
-- Pending item from prior session about reviewing Ashwynd privacy/terms for Android coverage is now moot since Android distribution is no longer surfaced anywhere on the site
+- Did not regenerate favicons since king said he'll provide a separate favicon image later; the new logo's whitespace and "LABS" wordmark wouldn't scale well to 32×32 anyway
+- Kept the original filename rather than introducing a versioned name to avoid touching HTML and cache-busting logic
 
 **Pending:**
-- (none)
+- Swap favicons (`assets/favicon-32.png`, `assets/favicon-180.png`) once king supplies the favicon-specific image
 
-**Last commit:** `b0b52d6` Remove Android beta links sitewide
+**Last commit:** `209487f` Replace hero logo with new crowned lion mark
 
 ---
 
