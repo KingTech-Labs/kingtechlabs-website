@@ -1,8 +1,8 @@
 # CLAUDE.md
 
-## Last Session (2026-04-24 rebrand-logo-gold-and-flag)
+## Last Session (2026-04-24 rebrand-logo-gold-flag-favicons)
 
-**Working on:** Brand refresh covering a new crowned-lion hero logo, a retuned gold palette, and consolidating the US flag into the veteran badge
+**Working on:** Brand refresh covering a new crowned-lion hero logo, retuned gold palette, the US flag consolidated into the veteran badge, and regenerated favicons
 
 **Completed:**
 - Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename preserved so no HTML edits needed; only `index.html:439` references it after subsequent edits)
@@ -11,6 +11,7 @@
 - Updated Design System note in CLAUDE.md to the new hex; grep-verified no stale old-gold references remain
 - Moved 🇺🇸 into the hero eyebrow badge at 28px (inline-styled span), removed the standalone `<div class="hero-flag">` element and its CSS rule, so the flag no longer double-renders
 - Added breathing room in the hero stack: `.hero-logo` bottom margin 24px → 40px, `.hero-eyebrow` bottom margin 12px → 24px
+- Regenerated `assets/favicon-32.png` and `assets/favicon-180.png` from `~/Downloads/v (3).png` by cropping a 2200×2200 square centered on the lion and LANCZOS-downscaling; kept existing filenames so no HTML changes were needed
 
 **Key decisions:**
 - Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base sits mid-gradient and still reads on black
@@ -20,9 +21,9 @@
 - Privacy/terms pages needed no gold changes; they don't reference those tokens
 
 **Pending:**
-- Swap favicons (`assets/favicon-32.png`, `assets/favicon-180.png`) once king supplies the favicon-specific image
+- (none)
 
-**Last commit:** `d4a729a` Add breathing room below hero logo and veteran badge
+**Last commit:** `29ba022` Regenerate favicons from new crowned-lion mark
 
 ---
 
