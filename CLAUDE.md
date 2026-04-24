@@ -1,21 +1,27 @@
 # CLAUDE.md
 
-## Last Session (2026-04-24 replace-company-logo)
+## Last Session (2026-04-24 rebrand-logo-and-gold)
 
-**Working on:** Swapping the hero logo with a new crowned-lion mark provided by king
+**Working on:** Refreshing the brand: new crowned-lion hero logo and retuned gold palette to match it
 
 **Completed:**
-- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename kept identical so no HTML edits needed)
-- Verified only one HTML reference existed (`index.html:444`); favicons left untouched per king's instruction
+- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename preserved so no HTML edits needed; verified only `index.html:444` references it)
+- Sampled the new logo PNG with Pillow to derive the actual gold tone rather than eyeballing
+- Updated brand gold across `index.html` and `games/ashwynd/index.html`: `--gold` `#eab64d` → `#edc084`, `--gold-light` `#f5ce7a` → `#f5d4a0`, and every `rgba(234, 182, 77, X)` → `rgba(237, 192, 132, X)` (including an inline Ashwynd-card accent and two faction-crest drop-shadows)
+- Updated Design System note in CLAUDE.md to the new hex
+- Confirmed grep clean for old `#eab64d` / `rgba(234,182,77…)` / `#f5ce7a` sitewide
 
 **Key decisions:**
-- Did not regenerate favicons since king said he'll provide a separate favicon image later; the new logo's whitespace and "LABS" wordmark wouldn't scale well to 32×32 anyway
-- Kept the original filename rather than introducing a versioned name to avoid touching HTML and cache-busting logic
+- Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base color sits mid-gradient and still reads clearly on the black background
+- Kept the existing `--gold-light` / `--gold-dim` / `--gold-border` variable structure instead of refactoring to gradient tokens; scope was a retune, not a system rewrite
+- Left cyan `#0af7eb` (FreedomFi) and silver `#B8BEC8` untouched since neither belongs to the KingTech master brand
+- Privacy/terms pages needed no changes; they don't reference the gold tokens
 
 **Pending:**
 - Swap favicons (`assets/favicon-32.png`, `assets/favicon-180.png`) once king supplies the favicon-specific image
+- King is previewing the new gold in-browser and may request a warmer/lighter/darker shade
 
-**Last commit:** `209487f` Replace hero logo with new crowned lion mark
+**Last commit:** `aaddac7` Retune brand gold to match new logo
 
 ---
 
