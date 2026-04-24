@@ -1,31 +1,25 @@
 # CLAUDE.md
 
-## Last Session (2026-04-24 rebrand-logo-gold-flag-favicons)
+## Last Session (2026-04-24 copy-veteran-hyphen-and-android-positioning)
 
-**Working on:** Brand refresh covering a new crowned-lion hero logo, retuned gold palette, the US flag consolidated into the veteran badge, and regenerated favicons
+**Working on:** Tightening positioning copy: hyphenating "Veteran-Owned" as a compound modifier and broadening studio/product copy from iOS-only to "iOS and Android" ahead of FreedomFi's Android launch
 
 **Completed:**
-- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename preserved so no HTML edits needed; only `index.html:439` references it after subsequent edits)
-- Sampled the new logo with Pillow to derive the actual gold rather than eyeballing
-- Updated brand gold across `index.html` and `games/ashwynd/index.html`: `--gold` `#eab64d` → `#edc084`, `--gold-light` `#f5ce7a` → `#f5d4a0`, and every `rgba(234, 182, 77, X)` → `rgba(237, 192, 132, X)` (including an inline Ashwynd-card accent and two faction-crest drop-shadows)
-- Updated Design System note in CLAUDE.md to the new hex; grep-verified no stale old-gold references remain
-- Moved 🇺🇸 into the hero eyebrow badge at 28px (inline-styled span), removed the standalone `<div class="hero-flag">` element and its CSS rule, so the flag no longer double-renders
-- Added breathing room in the hero stack: `.hero-logo` bottom margin 24px → 40px, `.hero-eyebrow` bottom margin 12px → 24px
-- Regenerated `assets/favicon-32.png` and `assets/favicon-180.png` from `~/Downloads/v (3).png` with a 2200×2200 LANCZOS-downscaled crop; kept existing filenames so no HTML changes were needed
-- Re-centered the favicons on the crown's symmetric axis `(2825, 1619)` instead of the bbox center `(2880, 1619)` after king flagged the lion looked too far left in the first pass
+- `index.html`: hero eyebrow `Veteran Owned & Operated` → `Veteran-Owned & Operated` (line 440); About copy `veteran owned & operated` → `veteran-owned & operated` (line 540)
+- `index.html`: meta description `Independent iOS apps` → `Independent iOS and Android apps` (line 6); hero sub `iOS apps` → `iOS and Android apps` (line 442); About `iOS studio` → `iOS and Android studio` (line 540)
+- `terms/freedomfi.html`: third-party service outages list now includes Google Play Store and Android Keystore (line 194); compatibility clause now reads "iOS or Android" (line 196)
+- Logged the remaining pre-Android-launch FreedomFi terms sweep (lines 142, 144–146, 149, 170, 173, 183–187, 191, 228, 237) as a TODO under "Pending / Next Up" in `~/claudecode/FreedomFi/CLAUDE.md` so it surfaces in the right repo
 
 **Key decisions:**
-- Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base sits mid-gradient and still reads on black
-- Kept the existing `--gold-light` / `--gold-dim` / `--gold-border` variable structure instead of refactoring to gradient tokens; scope was a retune, not a system rewrite
-- Used an inline `font-size:28px;line-height:1` span for the badge flag rather than a new class, since the 12px badge text vs 28px flag is a one-off size mix not worth a CSS token
-- Left cyan `#0af7eb` (FreedomFi) and silver `#B8BEC8` untouched since neither belongs to the KingTech master brand
-- Privacy/terms pages needed no gold changes; they don't reference those tokens
-- For favicon optical centering, used the crown's centroid as the reference symmetric axis rather than the full-logo bbox; the right fluffy mane and left circuit drips are asymmetric so bbox centering visibly shifts the face off-center
+- Did NOT touch the Ashwynd page's "iOS Beta / TestFlight" references because Ashwynd's beta is genuinely iOS-only; broadening that copy would be inaccurate
+- Did NOT touch `privacy/freedomfi.html:131` biometric clause since it already covers Face ID / Touch ID / Android fingerprint
+- Did NOT do the full FreedomFi terms Apple→multi-platform sweep here. Apple's required EULA boilerplate (sections 142, 144–146, 237) must stay but be scoped to "App Store distribution" with parallel Google Play language; that's lawyer-review work, not a copy tweak. Logged in FreedomFi CLAUDE.md instead
+- "Veteran-Owned" hyphen is the compound-modifier form (correct grammar before a noun); does not violate the global no-hyphen-as-pause rule
 
 **Pending:**
-- (none)
+- Pre-Android-launch legal copy sweep on `terms/freedomfi.html` (full detail logged in `~/claudecode/FreedomFi/CLAUDE.md` Pending section)
 
-**Last commit:** `45e25bb` Re-center favicons on the crown axis for optical balance
+**Last commit:** `b6ef0db` Hyphenate Veteran-Owned and broaden positioning to iOS and Android
 
 ---
 
