@@ -54,7 +54,7 @@ Everything lives in `index.html`:
 ## Design System
 
 CSS variables defined at the top of the `<style>` block:
-- Gold `#eab64d` -primary brand color
+- Gold `#edc084` -primary brand color (matches the crowned-lion logo)
 - Silver `#B8BEC8` -secondary
 - Cyan `#0af7eb` -FreedomFi accent
 - Background: black `#000000`, cards: `#111111`
