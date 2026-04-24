@@ -2,26 +2,26 @@
 
 ## Last Session (2026-04-24 rebrand-logo-gold-and-flag)
 
-**Working on:** Brand refresh covering a new crowned-lion hero logo, a retuned gold palette, and a US flag added to the veteran badge
+**Working on:** Brand refresh covering a new crowned-lion hero logo, a retuned gold palette, and consolidating the US flag into the veteran badge
 
 **Completed:**
-- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename preserved so no HTML edits needed; only `index.html:444` references it)
+- Replaced `assets/kingtechlabs-logo.png` with the new logo from `~/Downloads/KingTechLabs.png` (filename preserved so no HTML edits needed; only `index.html:439` references it after subsequent edits)
 - Sampled the new logo with Pillow to derive the actual gold rather than eyeballing
 - Updated brand gold across `index.html` and `games/ashwynd/index.html`: `--gold` `#eab64d` → `#edc084`, `--gold-light` `#f5ce7a` → `#f5d4a0`, and every `rgba(234, 182, 77, X)` → `rgba(237, 192, 132, X)` (including an inline Ashwynd-card accent and two faction-crest drop-shadows)
 - Updated Design System note in CLAUDE.md to the new hex; grep-verified no stale old-gold references remain
-- Added 🇺🇸 after "Veteran Owned & Operated" inside the hero eyebrow badge (`index.html:445`)
+- Moved 🇺🇸 into the hero eyebrow badge at 28px (inline-styled span), removed the standalone `<div class="hero-flag">` element and its CSS rule, so the flag no longer double-renders
 
 **Key decisions:**
 - Picked `#edc084` (the modal/most-common gold pixel in the new logo) over the brighter highlight `#f0c286` or the darker `#d6ad77` so the base sits mid-gradient and still reads on black
 - Kept the existing `--gold-light` / `--gold-dim` / `--gold-border` variable structure instead of refactoring to gradient tokens; scope was a retune, not a system rewrite
+- Used an inline `font-size:28px;line-height:1` span for the badge flag rather than a new class, since the 12px badge text vs 28px flag is a one-off size mix not worth a CSS token
 - Left cyan `#0af7eb` (FreedomFi) and silver `#B8BEC8` untouched since neither belongs to the KingTech master brand
 - Privacy/terms pages needed no gold changes; they don't reference those tokens
 
 **Pending:**
 - Swap favicons (`assets/favicon-32.png`, `assets/favicon-180.png`) once king supplies the favicon-specific image
-- Decide whether the standalone `.hero-flag` 🇺🇸 block (`index.html:446`) should be removed now that the flag also lives in the eyebrow badge; two flags currently stack
 
-**Last commit:** `89dc21b` Add US flag to Veteran Owned & Operated badge
+**Last commit:** `b2709bd` Scale in-badge flag to 28px and drop standalone hero flag
 
 ---
 
